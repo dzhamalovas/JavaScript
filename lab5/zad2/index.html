@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рейтинг звезд</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="help">
+        Помощь
+        <div class="help-content">
+            <p><strong>Инструкция:</strong></p>
+            <ol>
+                <li>Наведите курсор на звезды, чтобы выбрать количество.</li>
+                <li>Кликните на звезду, чтобы зафиксировать рейтинг.</li>
+                <li>Нажмите "Отправить", чтобы сохранить отзыв.</li>
+                <li>Ваш отзыв появится ниже в списке.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="rating-container">
+        <h1>Оцените нас</h1>
+        <div id="rating" class="stars">
+            <!-- Пять звезд для рейтинга -->
+            <span data-value="1" class="star">&#9733;</span>
+            <span data-value="2" class="star">&#9733;</span>
+            <span data-value="3" class="star">&#9733;</span>
+            <span data-value="4" class="star">&#9733;</span>
+            <span data-value="5" class="star">&#9733;</span>
+        </div>
+        <div id="rating-display" class="result">Вы выбрали: 0 звезд</div>
+        <button id="submit-rating" disabled>Отправить</button>
+    </div>
+
+    <div class="reviews-container">
+        <h2>Отзывы</h2>
+        <div id="average-rating">Общий рейтинг: 0</div>
+        <div id="reviews"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

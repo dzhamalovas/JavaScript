@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карта России</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+        #map {
+            height: 100%;
+            width: 100%;
+            z-index: 1; /* Убедитесь, что карта находится на нижнем уровне */
+        }
+        /* Плашка помощи */
+        .help {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            width: 220px;
+            max-width: 100%;
+            z-index: 1000; /* Убедитесь, что плашка будет отображаться поверх карты */
+        }
+        /* Появление инструкции при наведении */
+        .help:hover .help-content {
+            display: block;
+        }
+        /* Скрытие текста по умолчанию */
+        .help .help-content {
+            display: none;
+            font-size: 14px;
+            margin-top: 10px;
+            text-align: left;
+        }
+        /* Стилизация списка инструкций */
+        .help .help-content ol {
+            margin-left: 20px;
+        }
+        .help .help-content li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <div class="help">
+        Помощь
+        <div class="help-content">
+            <p><strong>Инструкция:</strong></p>
+            <ol>
+                <li>Это интерактивная карта городов России.</li>
+                <li>Наведите на маркер, чтобы посмотреть информацию.</li>
+                <li>Зажмите <strong>Ctrl</strong> и кликните по карте, чтобы добавить маркер.</li>
+                <li>Дважды кликните по маркеру, чтобы удалить его.</li>
+            </ol>
+        </div>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

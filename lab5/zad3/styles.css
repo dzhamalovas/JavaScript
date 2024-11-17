@@ -1,0 +1,141 @@
+/* Общие стили */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f3f3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+/* Плашка помощь */
+.help {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.help:hover .help-content {
+  display: block;
+}
+
+.help .help-content {
+  display: none;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.help ul {
+  margin-left: 20px;
+}
+
+/* Сеточный контейнер игры */
+.game-container {
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 20px 0;
+  justify-items: center;
+}
+
+.card {
+  width: 120px;
+  height: 120px;
+  background-color: #4A90E2; /* Синий фон для карт */
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: transparent;
+  font-size: 36px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.card img {
+  width: 95%;
+  height: 95%;
+  object-fit: cover; /* Это гарантирует, что картинка будет правильно вписываться в карточку */
+}
+
+/* Когда карта перевернута */
+.card.flipped {
+  color: #fff;
+  background-color: #50E3C2; /* Зелёный при перевороте */
+}
+
+/* Когда карты совпали */
+.card.matched {
+  background-color: #17a2b8; /* Пара найдена - синий */
+  pointer-events: none;
+}
+
+/* Карта выделяется при наведении, только размер */
+.card:hover {
+  transform: scale(1.1); /* Увеличение карты при наведении */
+}
+
+/* Информация о ходе и кнопка */
+.game-info {
+  margin-top: 20px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+button + button {
+  margin-top: 10px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .board {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .board {
+      grid-template-columns: repeat(2, 1fr);
+  }
+  .card {
+      width: 100px;
+      height: 100px;
+  }
+}

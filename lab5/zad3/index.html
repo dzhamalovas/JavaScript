@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Игра "Память"</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="help">
+        Помощь
+        <div class="help-content">
+            <p><strong>Инструкция:</strong></p>
+            <ul>
+                <li>Цель игры - найти все пары карт.</li>
+                <li>Нажимайте на карты, чтобы их перевернуть.</li>
+                <li>Как только найдете пару, они останутся перевернутыми.</li>
+                <li>Как только все пары будут найдены, вы получите поздравление!</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="game-container">
+        <h1>Игра "Память"</h1>
+        <div id="board" class="board"></div>
+        <div class="game-info">
+            <p>Ходы: <span id="moves">0</span></p>
+            <button id="reset-button" style="display: none;">Начать заново</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
